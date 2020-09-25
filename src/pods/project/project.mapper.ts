@@ -19,6 +19,7 @@ export const mapProjectFromApiToVm = (
   return Boolean(project)
     ? {
         ...project,
+        id: parseInt(project.id),
         employees: mapEmployeeSummaryListFromApiToVm(project.employees),
       }
     : viewModel.createEmptyProject();
